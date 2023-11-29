@@ -1,0 +1,3 @@
+deployment_path: "~/Infrastructure"
+git_repository: "https://github.com/ppaciekq/Infrastructure.git"
+git_branch: "main"
