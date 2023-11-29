@@ -1,0 +1,21 @@
+- name: Install docker-compose and docker packages
+  apt:
+    name:
+      - docker-compose
+      - docker
+    state: present
+    update_cache: yes
+  become: yes
+
+- name: Clone the specified git repository
+  git:
+    repo: "{{ git_repository }}"
+    dest: "{{ deployment_path }}"
+    version: "{{ git_branch }}"
+  become: yes
+
+- name: Run docker-compose with build option
+  docker_compose:
+    project_src: "{{ deployment_path }}"
+    build: yes
+  become: yes
