@@ -1,5 +1,5 @@
 - name: install_packages
   apt:
     name:
-    - htop
-    - python3-pip
+      - htop
+      - python3-pip
